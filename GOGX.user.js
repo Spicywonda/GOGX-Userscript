@@ -59,8 +59,8 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.2);
         `;
 
-        btnPirata.onmouseover = () => btnPirata.style.backgroundColor = '#6a1b9a';
-        btnPirata.onmouseout = () => btnPirata.style.backgroundColor = '#8a2be2';
+        - btnPirata.href = `https://gog-rev.com/game/${gameSlug}`;
+        + btnPirata.href = `https://gog-rev.com/games/${gameSlug}/`;
 
         let botonWishlist = document.querySelector('.product-actions-wishlist') || document.querySelector('[ng-click="wishlist()"]');
 
