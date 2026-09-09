@@ -31,7 +31,7 @@
 
         let btnPirata = document.createElement('a');
         btnPirata.id = 'piratex-btn';
-        btnPirata.href = `https://gog-rev.com/game/${gameSlug}`;
+        btnPirata.href = `https://gog-rev.com/games/${gameSlug}/`;
         btnPirata.target = '_blank';
         btnPirata.innerHTML = `🏴‍☠️ Free GOG Games`;
 
