@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         GoGX - GOG Direct Link (Turbo)
 // @namespace    WonderSpicy
-// @version      3.0
-// @description  Agrega un botón morado casi instantáneo hacia gog-games.to
+// @version      3.1
+// @description  Agrega un botón morado casi instantáneo hacia gog-rev.com
 // @author       WonderSpicy
 // @match        *://*.gog.com/game/*
 // @match        *://*.gog.com/*/game/*
@@ -13,7 +13,7 @@
 (function() {
     'use strict';
 
-    console.log("🏴‍☠️ GoGX v3.0 Iniciado: Modo Turbo (MutationObserver)...");
+    console.log("🏴‍☠️ GoGX v3.1 Iniciado: Modo Turbo (MutationObserver)...");
 
     // Empaquetamos todo el proceso de crear el botón en una función
     function inyectarBoton() {
@@ -33,7 +33,7 @@
 
         let btnPirata = document.createElement('a');
         btnPirata.id = 'piratex-btn';
-        btnPirata.href = `https://gog-games.to/game/${gameSlug}`;
+        btnPirata.href = `https://gog-rev.com/game/${gameSlug}`;
         btnPirata.target = '_blank';
         btnPirata.innerHTML = `🏴‍☠️ Free GOG Games`;
 
