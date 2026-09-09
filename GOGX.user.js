@@ -15,11 +15,9 @@
 
     console.log("🏴‍☠️ GoGX v3.1 Iniciado: Modo Turbo (MutationObserver)...");
 
-    // Empaquetamos todo el proceso de crear el botón en una función
     function inyectarBoton() {
         let contenedorBotones = document.querySelector('.product-actions') || document.querySelector('.product-actions-price');
 
-        // Si no está el contenedor o ya pusimos el botón, cancelamos FUCK YEAH
         if (!contenedorBotones || document.getElementById('piratex-btn')) return false;
 
         let path = window.location.pathname;
@@ -59,9 +57,6 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.2);
         `;
 
-        - btnPirata.href = `https://gog-rev.com/game/${gameSlug}`;
-        + btnPirata.href = `https://gog-rev.com/games/${gameSlug}/`;
-
         let botonWishlist = document.querySelector('.product-actions-wishlist') || document.querySelector('[ng-click="wishlist()"]');
 
         if (botonWishlist && botonWishlist.parentNode) {
@@ -71,22 +66,18 @@
         }
 
         console.log(`🏴‍☠️ Enlace inyectado al instante para: ${gameSlug}`);
-        return true; // Retorna true si tuvo éxito
+        return true;
     }
 
-    // 1. Intentamos inyectarlo inmediatamente por si la página cargó muy rápido
     if (!inyectarBoton()) {
 
-        // 2. Si aún no carga, activamos el Ojo de Sauron (MutationObserver)
         const observer = new MutationObserver((mutations, obs) => {
-            // Cada vez que la página cambie un píxel, intenta inyectar el botón
             if (inyectarBoton()) {
-                // Si el botón se inyectó con éxito, apagamos el vigilante para no gastar memoria
+                
                 obs.disconnect();
             }
         });
 
-        // Le decimos al vigilante que mire todo el cuerpo de la página
         observer.observe(document.body, { childList: true, subtree: true });
     }
 })();
